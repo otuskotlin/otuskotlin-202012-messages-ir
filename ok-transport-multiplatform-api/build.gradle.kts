@@ -1,6 +1,7 @@
-val serializationPluginVersion: String by project
+val serializationVersion: String by project
 
 plugins {
+    id("myproject.java-conventions")
     kotlin("multiplatform")
     kotlin("plugin.serialization")
 }
@@ -26,8 +27,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-common"))
-//                api("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationPluginVersion")
-                api("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationPluginVersion")
+//                api("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
+                api("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
             }
         }
         val commonTest by getting {
